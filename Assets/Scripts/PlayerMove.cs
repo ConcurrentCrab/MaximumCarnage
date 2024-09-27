@@ -20,7 +20,6 @@ public class PlayerMove : MonoBehaviour {
     }
 
     void Update() {
-        Debug.Log(inputDash);
     }
 
     void FixedUpdate() {
