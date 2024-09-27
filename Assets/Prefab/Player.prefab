@@ -183,3 +183,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxAccel: 15
   maxVel: 10
+  dashVel: 50
+  dashTime: 0.2
+  dashCooldown: 2
