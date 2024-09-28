@@ -226,6 +226,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5145100251911980726, guid: 0ce5b93db5e645845a203a99277f0596, type: 3}
   m_PrefabInstance: {fileID: 1938262149114954530}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1368844460 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6149533431221701271, guid: 810473d5843d1904fba4aca06fb051e1, type: 3}
+  m_PrefabInstance: {fileID: 121496107474202147}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1924961284
 GameObject:
   m_ObjectHideFlags: 0
@@ -507,6 +512,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game
       objectReference: {fileID: 0}
+    - target: {fileID: 7703936715487082629, guid: 994eb0aebf85c1548aa638cdeb36e99c, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 1368844460}
     - target: {fileID: 7703936715487082629, guid: 994eb0aebf85c1548aa638cdeb36e99c, type: 3}
       propertyPath: ProjectileHolder
       value: 

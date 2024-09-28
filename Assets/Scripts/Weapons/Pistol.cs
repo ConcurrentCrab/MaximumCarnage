@@ -53,7 +53,7 @@ public class Pistol : WeaponBase {
         Vector3 spawnWorld = transform.TransformPoint(bulletSpawn);
         GameObject bullet = Instantiate(bulletPrefab, GameGlobal.ProjectileHolder);
         bullet.transform.position = spawnWorld;
-        bullet.GetComponent<Rigidbody>().velocity = transform.forward * bulletVel;
+        bullet.GetComponent<PistolBullet>().velocity = transform.forward * bulletVel;
     }
 
 }
