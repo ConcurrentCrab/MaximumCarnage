@@ -9,8 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 318588852285519062}
+  - component: {fileID: 3137025939163157359}
   - component: {fileID: 2891996977984443371}
   - component: {fileID: 7031360521915250904}
+  - component: {fileID: 103152219458873786}
   - component: {fileID: 8705670069458040655}
   - component: {fileID: 392282359634347381}
   m_Layer: 8
@@ -37,6 +39,18 @@ Transform:
   - {fileID: 8535039182134901845}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3137025939163157359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 37182827640602448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eccacb63a75daef44b837bc708da9f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2891996977984443371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52,7 +66,6 @@ MonoBehaviour:
   maxAccel: 10
   maxVel: 2
   turnVel: 1
-  target: {fileID: 0}
 --- !u!114 &7031360521915250904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65,7 +78,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d145323acf98187438f1fd2e1f285d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
+  healthStart: 3
+--- !u!114 &103152219458873786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 37182827640602448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 067e81ae86cbc6e418c88ce3859dd1cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackRange: 1
+  attackTime: 1
+  fist: {fileID: 1497760681188638586}
 --- !u!54 &8705670069458040655
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -123,7 +151,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8535039182134901845}
-  - component: {fileID: 7092887586786552441}
+  - component: {fileID: 6062769216484188074}
   - component: {fileID: 548664921905708021}
   m_Layer: 9
   m_Name: Fist
@@ -148,7 +176,7 @@ Transform:
   - {fileID: 3284268429924889318}
   m_Father: {fileID: 318588852285519062}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7092887586786552441
+--- !u!114 &6062769216484188074
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -157,7 +185,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1497760681188638586}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 067e81ae86cbc6e418c88ce3859dd1cc, type: 3}
+  m_Script: {fileID: 11500000, guid: e8ae43621b3ed39479cc274c971b2966, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hurtLayer:

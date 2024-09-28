@@ -2,7 +2,9 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour, IHurtable {
 
-    [SerializeField] float health;
+    [SerializeField] float healthStart;
+
+    public float Health { get; private set; }
 
     void Start() {
     }
@@ -10,18 +12,12 @@ public class EnemyHealth : MonoBehaviour, IHurtable {
     void Update() {
     }
 
-    void FixedUpdate() {
-        if (health <= 0f) {
-            die();
-        }
+    public void initHealth() {
+        Health = healthStart;
     }
 
     public void Hurt(float val) {
-        health -= val;
-    }
-
-    void die() {
-        Destroy(gameObject);
+        Health -= val;
     }
 
 }

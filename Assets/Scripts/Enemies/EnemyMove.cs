@@ -1,11 +1,10 @@
 using UnityEngine;
 
-public class ZombieFollow : MonoBehaviour {
+public class EnemyMove : MonoBehaviour {
 
     [SerializeField] float maxAccel;
     [SerializeField] float maxVel;
     [SerializeField] float turnVel;
-    [SerializeField] Transform target;
 
     Vector3 velocity;
 
@@ -15,15 +14,12 @@ public class ZombieFollow : MonoBehaviour {
     void Update() {
     }
 
-    void FixedUpdate() {
-        if (!target) {
-            return;
-        }
-        Vector3 targetDir = (target.position - transform.position).normalized;
-        followTarget(targetDir);
+    public void processMove(Vector3 target) {
+        Vector3 targetDir = (target - transform.position).normalized;
+        enemyMove(targetDir);
     }
 
-    void followTarget(Vector3 dir) {
+    void enemyMove(Vector3 dir) {
         transform.forward = Vector3.RotateTowards(transform.forward, dir, turnVel, 0f);
         Vector3 desiredVel = dir * maxVel;
         float maxVelDelta = maxAccel * Time.fixedDeltaTime;
