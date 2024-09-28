@@ -15,7 +15,7 @@ public class PlayerAim : MonoBehaviour {
     void Update() {
     }
 
-    void FixedUpdate() {
+    public void processAim() {
         transform.forward = Vector3.RotateTowards(transform.forward, inputAim, aimVel, 0f);
     }
 

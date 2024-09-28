@@ -17,13 +17,16 @@ public class PlayerWeapon : MonoBehaviour {
     float inputFire = 0f;
 
     void Start() {
-        switchWeapon(startingWeapon);
     }
 
     void Update() {
     }
 
-    private void FixedUpdate() {
+    public void initWeapon() {
+        switchWeapon(startingWeapon);
+    }
+
+    public void processWeapon() {
         if (inputFire > 0f) {
             currentWeapon.Fire();
         }

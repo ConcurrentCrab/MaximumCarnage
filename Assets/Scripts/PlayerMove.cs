@@ -22,7 +22,7 @@ public class PlayerMove : MonoBehaviour {
     void Update() {
     }
 
-    void FixedUpdate() {
+    public void processMove() {
         if (inputDash > 0f && dashCooldownTimer == 0f) {
             dashTimer = dashTime;
             dashCooldownTimer = dashCooldown;
