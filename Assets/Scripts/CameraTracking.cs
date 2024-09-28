@@ -16,6 +16,9 @@ public class CameraTracking : MonoBehaviour {
     }
 
     private void FixedUpdate() {
+        if (!target) {
+            return;
+        }
         transform.position = Vector3.SmoothDamp(transform.position, target.position + relativePos, ref smoothVel, smoothTime);
     }
 

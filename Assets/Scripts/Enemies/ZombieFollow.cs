@@ -16,6 +16,9 @@ public class ZombieFollow : MonoBehaviour {
     }
 
     void FixedUpdate() {
+        if (!target) {
+            return;
+        }
         Vector3 targetDir = (target.position - transform.position).normalized;
         followTarget(targetDir);
     }
