@@ -3,13 +3,15 @@ using UnityEngine.InputSystem;
 
 public class PlayerAim : MonoBehaviour {
 
-    [SerializeField] Camera cam;
     [SerializeField] float aimY;
     [SerializeField] float aimVel;
+
+    Camera cam;
 
     Vector3 inputAim = Vector3.zero;
 
     void Start() {
+        cam = GameGlobal.Cam;
     }
 
     void Update() {

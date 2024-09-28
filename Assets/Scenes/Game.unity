@@ -389,20 +389,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 7922469852634806423, guid: 810473d5843d1904fba4aca06fb051e1, type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 634822462}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 810473d5843d1904fba4aca06fb051e1, type: 3}
---- !u!4 &121496107474202148 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 731975025452920504, guid: 810473d5843d1904fba4aca06fb051e1, type: 3}
-  m_PrefabInstance: {fileID: 121496107474202147}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1938262149114954530
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -513,6 +504,10 @@ PrefabInstance:
       value: Game
       objectReference: {fileID: 0}
     - target: {fileID: 7703936715487082629, guid: 994eb0aebf85c1548aa638cdeb36e99c, type: 3}
+      propertyPath: Cam
+      value: 
+      objectReference: {fileID: 634822462}
+    - target: {fileID: 7703936715487082629, guid: 994eb0aebf85c1548aa638cdeb36e99c, type: 3}
       propertyPath: Player
       value: 
       objectReference: {fileID: 1368844460}
@@ -590,10 +585,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 827863593896944569, guid: 8b140ca8fc2bab84b94728eb86eb9fac, type: 3}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 121496107474202148}
     - target: {fileID: 1907112430261046749, guid: 8b140ca8fc2bab84b94728eb86eb9fac, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

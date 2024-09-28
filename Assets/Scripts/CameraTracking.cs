@@ -2,13 +2,14 @@ using UnityEngine;
 
 public class CameraTracking : MonoBehaviour {
 
-    [SerializeField] Transform target;
     [SerializeField] float smoothTime;
 
+    Transform target;
     Vector3 relativePos = Vector3.zero;
     Vector3 smoothVel = Vector3.zero;
 
     void Start() {
+        target = GameGlobal.Player.transform;
         relativePos = transform.position - target.position;
     }
 
