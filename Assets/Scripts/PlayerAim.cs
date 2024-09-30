@@ -11,7 +11,7 @@ public class PlayerAim : MonoBehaviour {
     Vector3 inputAim = Vector3.zero;
 
     void Start() {
-        cam = GameGlobal.Cam;
+        cam = GameGlobal.game.Cam;
     }
 
     void Update() {

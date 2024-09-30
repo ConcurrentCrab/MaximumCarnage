@@ -22,7 +22,7 @@ public class ZombieNormal : MonoBehaviour {
         attack = GetComponent<EnemyAttack>();
         health = GetComponent<EnemyHealth>();
 
-        player = GameGlobal.Player.transform;
+        player = GameGlobal.game.Player.transform;
 
         health.initHealth();
     }

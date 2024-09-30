@@ -504,19 +504,19 @@ PrefabInstance:
       value: Game
       objectReference: {fileID: 0}
     - target: {fileID: 7703936715487082629, guid: 994eb0aebf85c1548aa638cdeb36e99c, type: 3}
-      propertyPath: Cam
+      propertyPath: cam
       value: 
       objectReference: {fileID: 634822462}
     - target: {fileID: 7703936715487082629, guid: 994eb0aebf85c1548aa638cdeb36e99c, type: 3}
-      propertyPath: Player
+      propertyPath: player
       value: 
       objectReference: {fileID: 1368844460}
     - target: {fileID: 7703936715487082629, guid: 994eb0aebf85c1548aa638cdeb36e99c, type: 3}
-      propertyPath: EnemyHolder
+      propertyPath: enemyHolder
       value: 
       objectReference: {fileID: 7850215476911519233}
     - target: {fileID: 7703936715487082629, guid: 994eb0aebf85c1548aa638cdeb36e99c, type: 3}
-      propertyPath: ProjectileHolder
+      propertyPath: projectileHolder
       value: 
       objectReference: {fileID: 1023398163}
     m_RemovedComponents: []

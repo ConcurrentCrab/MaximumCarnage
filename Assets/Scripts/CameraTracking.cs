@@ -9,7 +9,7 @@ public class CameraTracking : MonoBehaviour {
     Vector3 smoothVel = Vector3.zero;
 
     void Start() {
-        target = GameGlobal.Player.transform;
+        target = GameGlobal.game.Player.transform;
         relativePos = transform.position - target.position;
     }
 

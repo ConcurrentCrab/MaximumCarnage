@@ -2,25 +2,27 @@ using UnityEngine;
 
 public static class GameGlobal {
 
-    public static GameObject Player;
-    public static Camera Cam;
-    public static Transform EnemyHolder;
-    public static Transform ProjectileHolder;
+    public static Game game;
 
 }
 
 public class Game : MonoBehaviour {
 
-    [SerializeField] GameObject Player;
-    [SerializeField] Camera Cam;
-    [SerializeField] Transform EnemyHolder;
-    [SerializeField] Transform ProjectileHolder;
+    [SerializeField] GameObject player;
+    [SerializeField] Camera cam;
+    [SerializeField] Transform enemyHolder;
+    [SerializeField] Transform projectileHolder;
+
+    public GameObject Player => player;
+
+    public Camera Cam => cam;
+
+    public Transform EnemyHolder => enemyHolder;
+
+    public Transform ProjectileHolder => projectileHolder;
 
     void Start() {
-        GameGlobal.Player = Player;
-        GameGlobal.Cam = Cam;
-        GameGlobal.EnemyHolder = EnemyHolder;
-        GameGlobal.ProjectileHolder = ProjectileHolder;
+        GameGlobal.game = this;
     }
 
     void Update() {

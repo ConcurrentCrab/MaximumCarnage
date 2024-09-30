@@ -11,8 +11,8 @@ public class CombatDirector : MonoBehaviour {
     float spawnTimer = 0f;
 
     void Start() {
-        target = GameGlobal.Player.transform;
-        holder = GameGlobal.EnemyHolder;
+        target = GameGlobal.game.Player.transform;
+        holder = GameGlobal.game.EnemyHolder;
         spawnTimer = spawnDelay;
     }
 
