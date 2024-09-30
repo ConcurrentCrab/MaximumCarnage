@@ -13,6 +13,8 @@ public class Game : MonoBehaviour {
     [SerializeField] Transform enemyHolder;
     [SerializeField] Transform projectileHolder;
 
+    int score = 0;
+
     public GameObject Player => player;
 
     public Camera Cam => cam;
@@ -21,11 +23,17 @@ public class Game : MonoBehaviour {
 
     public Transform ProjectileHolder => projectileHolder;
 
+    public int Score => score;
+
     void Start() {
         GameGlobal.game = this;
     }
 
     void Update() {
+    }
+
+    public void scoreIncr() {
+        score++;
     }
 
 }
