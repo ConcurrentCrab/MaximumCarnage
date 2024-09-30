@@ -2,11 +2,10 @@ using UnityEngine;
 
 public class PistolBullet : MonoBehaviour {
 
+    [SerializeField] float velocity;
     [SerializeField] LayerMask hurtLayer;
     [SerializeField] float hurtVal;
     [SerializeField] float knockVal;
-
-    public Vector3 velocity { get; set; }
 
     void Start() {
     }
@@ -15,7 +14,7 @@ public class PistolBullet : MonoBehaviour {
     }
 
     void FixedUpdate() {
-        transform.localPosition += velocity * Time.fixedDeltaTime;
+        transform.localPosition += transform.forward * velocity * Time.fixedDeltaTime;
     }
 
     void OnTriggerEnter(Collider coll) {

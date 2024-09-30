@@ -7,7 +7,6 @@ public class Pistol : WeaponBase {
     [SerializeField] float reloadTime;
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] Vector3 bulletSpawn;
-    [SerializeField] float bulletVel;
 
     int rounds = 0;
     float shootTimer = 0f;
@@ -53,7 +52,7 @@ public class Pistol : WeaponBase {
         Vector3 spawnWorld = transform.TransformPoint(bulletSpawn);
         GameObject bullet = Instantiate(bulletPrefab, GameGlobal.ProjectileHolder);
         bullet.transform.position = spawnWorld;
-        bullet.GetComponent<PistolBullet>().velocity = transform.forward * bulletVel;
+        bullet.transform.forward = transform.forward;
     }
 
 }
