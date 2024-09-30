@@ -9,6 +9,7 @@ public class ZombieNormal : MonoBehaviour {
     }
 
     EnemyMove move;
+    EnemyPhysics physics;
     EnemyAttack attack;
     EnemyHealth health;
 
@@ -17,6 +18,7 @@ public class ZombieNormal : MonoBehaviour {
 
     void Start() {
         move = GetComponent<EnemyMove>();
+        physics = GetComponent<EnemyPhysics>();
         attack = GetComponent<EnemyAttack>();
         health = GetComponent<EnemyHealth>();
 
@@ -40,12 +42,14 @@ public class ZombieNormal : MonoBehaviour {
         switch (state) {
         case StateEnum.Walking:
             move.processMove(target);
+            physics.processPhysics();
             attack.processAttack(target);
             if (attack.isAttacking) {
                 state = StateEnum.Attacking;
             }
             break;
         case StateEnum.Attacking:
+            physics.processPhysics();
             attack.processAttack(target);
             if (!attack.isAttacking) {
                 state = StateEnum.Walking;

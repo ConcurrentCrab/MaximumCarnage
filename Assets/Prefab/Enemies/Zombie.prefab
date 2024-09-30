@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 318588852285519062}
   - component: {fileID: 3137025939163157359}
   - component: {fileID: 2891996977984443371}
+  - component: {fileID: 2010985295935642872}
   - component: {fileID: 7031360521915250904}
   - component: {fileID: 103152219458873786}
   - component: {fileID: 8705670069458040655}
@@ -66,6 +67,21 @@ MonoBehaviour:
   maxAccel: 10
   maxVel: 2
   turnVel: 1
+--- !u!114 &2010985295935642872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 37182827640602448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24969bc584b909c438d760e540546a5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mass: 1
+  drag: 0.1
+  dragVel: 0.1
 --- !u!114 &7031360521915250904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,6 +208,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   hurtVal: 1
+  knockVal: 200
 --- !u!65 &548664921905708021
 BoxCollider:
   m_ObjectHideFlags: 0

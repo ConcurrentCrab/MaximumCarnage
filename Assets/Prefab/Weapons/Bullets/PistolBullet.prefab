@@ -133,7 +133,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   hurtVal: 1
-  velocity: {x: 0, y: 0, z: 0}
+  knockVal: 200
 --- !u!65 &8146822603472597383
 BoxCollider:
   m_ObjectHideFlags: 0

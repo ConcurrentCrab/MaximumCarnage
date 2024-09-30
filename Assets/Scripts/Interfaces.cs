@@ -8,6 +8,6 @@ public interface IHurtable {
 
 public interface IKnockable {
 
-    void Knock(Vector3 dir, float val);
+    void Knock(Vector3 force);
 
 }

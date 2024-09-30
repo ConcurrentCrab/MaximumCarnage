@@ -9,6 +9,7 @@ public class Player : MonoBehaviour {
 
     PlayerMove move;
     PlayerAim aim;
+    PlayerPhysics physics;
     PlayerWeapon weapon;
     PlayerHealth health;
 
@@ -19,6 +20,7 @@ public class Player : MonoBehaviour {
     void Start() {
         move = GetComponent<PlayerMove>();
         aim = GetComponent<PlayerAim>();
+        physics = GetComponent<PlayerPhysics>();
         weapon = GetComponent<PlayerWeapon>();
         health = GetComponent<PlayerHealth>();
 
@@ -38,6 +40,7 @@ public class Player : MonoBehaviour {
 
         switch (state) {
         case StateEnum.Normal:
+            physics.processPhysics();
             move.processMove();
             aim.processAim();
             weapon.processWeapon();
