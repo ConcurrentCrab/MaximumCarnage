@@ -3,12 +3,13 @@ using UnityEngine.InputSystem;
 
 public class PlayerAim : MonoBehaviour {
 
-    [SerializeField] float aimY;
     [SerializeField] float aimVel;
+    [SerializeField] float aimY;
+    [SerializeField] float aimDistController;
 
     Camera cam;
 
-    Vector3 inputAim = Vector3.zero;
+    PlayerDeviceBase playerDevice = new();
 
     void Start() {
         cam = GameGlobal.game.Cam;
@@ -18,20 +19,108 @@ public class PlayerAim : MonoBehaviour {
     }
 
     public void processAim() {
-        transform.forward = Vector3.RotateTowards(transform.forward, inputAim, aimVel, 0f);
+        Vector3 aimDir = playerDevice.AimDir;
+        transform.forward = Vector3.RotateTowards(transform.forward, aimDir, aimVel, 0f);
+    }
+
+    public Vector2 getAimPoint() {
+        return playerDevice.AimPoint;
     }
 
     void OnInputAimMouse(InputValue value) {
-        Ray ray = cam.ScreenPointToRay(value.Get<Vector2>());
-        float travel = (aimY - ray.origin.y) / Vector3.Dot(ray.direction, Vector3.up);
-        Vector3 p = ray.GetPoint(travel);
-        p.y = 0f;
-        inputAim = (p - transform.position).normalized;
+        if (playerDevice is not PlayerDeviceMouse) {
+            playerDevice = new PlayerDeviceMouse(transform, cam, aimY);
+        }
+        playerDevice.OnInput(value);
     }
 
     void OnInputAimController(InputValue value) {
-        Vector2 dir = value.Get<Vector2>().normalized;
-        inputAim = new Vector3(dir.x, 0f, dir.y);
+        if (playerDevice is not PlayerDeviceController) {
+            playerDevice = new PlayerDeviceController(transform, cam, aimY, aimDistController);
+        }
+        playerDevice.OnInput(value);
+    }
+
+    class PlayerDeviceBase {
+
+        virtual public void OnInput(InputValue value) {}
+
+        virtual public Vector3 AimDir => Vector3.zero;
+
+        virtual public Vector2 AimPoint => Vector2.zero;
+
+    }
+
+    class PlayerDeviceMouse : PlayerDeviceBase {
+
+        Transform transform;
+        Camera cam;
+        float aimY;
+
+        Vector2 aimPoint = Vector2.zero;
+
+        public PlayerDeviceMouse(Transform t, Camera c, float y) {
+            cam = c;
+            transform = t;
+            aimY = y;
+        }
+
+        override public void OnInput(InputValue value) {
+            Vector2 val = value.Get<Vector2>();
+            aimPoint = val;
+        }
+
+        override public Vector3 AimDir {
+            get {
+                Ray ray = cam.ScreenPointToRay(aimPoint);
+                float travel = (aimY - ray.origin.y) / Vector3.Dot(ray.direction, Vector3.up);
+                Vector3 point = ray.GetPoint(travel);
+                Vector3 dir = (new Vector3(point.x, 0f, point.z) - transform.position).normalized;
+                return dir;
+            }
+        }
+
+        override public Vector2 AimPoint => aimPoint;
+
+    }
+
+    class PlayerDeviceController : PlayerDeviceBase {
+
+        Transform transform;
+        Camera cam;
+        float aimY;
+        float aimDist;
+
+        Vector3 aimDir = Vector3.zero;
+
+        public PlayerDeviceController(Transform t, Camera c, float y, float d) {
+            cam = c;
+            transform = t;
+            aimY = y;
+            aimDist = d;
+        }
+
+        override public void OnInput(InputValue value) {
+            Vector2 val = value.Get<Vector2>();
+            Vector3 dir = new Vector3(val.x, 0f, val.y).normalized;
+            if (dir == Vector3.zero) {
+                return;
+            }
+            aimDir = dir;
+        }
+
+        override public Vector3 AimDir => aimDir;
+
+        override public Vector2 AimPoint {
+            get {
+                Vector3 relpoint = aimDir * aimDist;
+                Vector3 point = new Vector3(relpoint.x, aimY, relpoint.z) + transform.position;
+                Vector3 campoint = cam.WorldToScreenPoint(point);
+                Vector2 pos = new Vector2(campoint.x, campoint.y);
+                return pos;
+            }
+        }
+
     }
 
 }

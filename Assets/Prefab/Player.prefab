@@ -228,8 +228,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c7e46ec53c44b4ca46526d22ba68c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aimY: 1.5
   aimVel: 1
+  aimY: 1.5
+  aimDistController: 7.5
 --- !u!114 &3577681730823195279
 MonoBehaviour:
   m_ObjectHideFlags: 0
