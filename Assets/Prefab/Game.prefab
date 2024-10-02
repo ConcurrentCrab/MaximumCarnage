@@ -44,4 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ae5a7c1aef3dfa48a87bf8190477b02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ProjectileHolder: {fileID: 0}
+  player: {fileID: 0}
+  cam: {fileID: 0}
+  enemyHolder: {fileID: 0}
+  projectileHolder: {fileID: 0}
+  gameOverScreen: {fileID: 0}
+  gameOverDelay: 2
