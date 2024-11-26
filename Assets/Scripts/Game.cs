@@ -33,8 +33,11 @@ public class Game : MonoBehaviour {
 
     public bool IsPlayerDead => isPlayerDead;
 
-    void Start() {
+    private void Awake() {
         GameGlobal.game = this;
+    }
+
+    void Start() {
         health = player.GetComponent<PlayerHealth>();
     }
 

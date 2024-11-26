@@ -73,9 +73,8 @@ public class PlayerAim : MonoBehaviour {
         override public Vector3 AimDir {
             get {
                 Ray ray = cam.ScreenPointToRay(aimPoint);
-                float travel = (aimY - ray.origin.y) / Vector3.Dot(ray.direction, Vector3.up);
-                Vector3 point = ray.GetPoint(travel);
-                Vector3 dir = (new Vector3(point.x, 0f, point.z) - transform.position).normalized;
+                Vector3 intersect = new Plane(Vector3.up, aimY).RaycastPoint(ray);
+                Vector3 dir = (new Vector3(intersect.x, 0f, intersect.z) - transform.position).normalized;
                 return dir;
             }
         }
